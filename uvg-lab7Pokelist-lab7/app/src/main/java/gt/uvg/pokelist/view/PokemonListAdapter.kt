@@ -29,8 +29,8 @@ class PokemonListAdapter(private val pokemonList: List<Pokemon>) : RecyclerView.
         Picasso.get().load(pokemon.imageUrlFront).into(holder.binding.pokemonPhoto) //cargar fotos de Picasso
 
         // Al hacer click en el boton con el pokemon
+        val action = MainFragmentDirections.actionMainFragmentToDetailFragment(pokemon)
         holder.binding.root.setOnClickListener{
-            val action = MainFragmentDirections.actionMainFragmentToDetailFragment(pokemon)
             holder.itemView.findNavController().navigate(action)
         }
 
